@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>
+	<xs:include schemaLocation="rental-v1.0.xsd"/>
+	<xs:include schemaLocation="parkingCarWash-v1.0.xsd"/>
+	<xs:include schemaLocation="garage-v1.0.xsd"/>
+	<xs:complexType name="updateClientType">
+		<xs:sequence>
+			<xs:element name="updateUniqueId" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Μοναδικός Αριθμός Ενημέρωσης/ Ολοκλήρωσης Ψηφιακού Πελατολογίου. Συμπληρώνεται από την Υπηρεσία.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="initialDclId" type="xs:long">
+				<xs:annotation>
+					<xs:documentation>Αρχική Εγγραφή Ψηφιακού Πελατολογίου που πρέπει να ενημερωθεί</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clientServiceType" type="ClientServiceType" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Τύπος Πελατολογίου</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entryCompletion" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ολοκλήρωση Εγγραφής Ψηφιακού Πελατολογίου</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="nonIssueInvoice" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Μη έκδοση παραστατικού</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="amount" type="AmountType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Συμφωνηθέν Ποσό</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="completionDateTime" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ημερομηνία και ώρα Ολοκλήρωσης εγγραφής στο Ψηφιακό Πελατολόγιο</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="isDiffVehReturnLocation" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Διαφορετικός Τόπος Επιστροφής Οχήματος</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vehicleReturnLocation" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Τόπος Επιστροφής Οχήματος</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="250"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="providedServiceCategory" type="ProvidedCategoryServiceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Κατηγορία Παρεχόμενων Υπηρεσιών</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="providedServiceCategoryOther" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Περιγραφή Κατηγορίας Παρεχόμενων Υπηρεσιών Λοιπά</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="invoiceKind" type="InvoiceΤype" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Είδος Παραστατικού</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="offSiteProvidedService" type="OffSiteProvidedServiceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Παροχή Υπηρεσιών εκτός Εγκατάστασης</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="exitDateTime" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ημερομηνία και ώρα εξόδου για άλλες εργασίες</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entityVatNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ΑΦΜ Επιχείρησης</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="cooperatingVatNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Συνεργαζόμενο ΑΦΜ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="otherBranch" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Άλλος Αρ. Εγκατάστασης εντός της ίδιας οντότητας</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="reasonNonIssueType" type="ReasonNonIssueType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Αιτιολογία Μη έκδοσης Παραστατικού</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="comments" type="Comments" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Σχόλια/ Παρατηρήσεις</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="invoiceCounterparty" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ΑΦΜ Αντισυμβαλλόμενου</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="invoiceCounterpartyCountry" type="CountryType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Χώρα Αντισυμβαλλόμενου</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

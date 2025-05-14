@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcr="http://www.aade.gr/myDATA/dcr/v1.0" targetNamespace="http://www.aade.gr/myDATA/dcr/v1.0" elementFormDefault="qualified" version="1.0">
+	<xs:include schemaLocation="DigitalClientsDoc-v1.0.xsd"/>
+	<xs:element name="RequestedDoc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="continuationToken" type="xs:string" minOccurs="0"/>
+				<xs:element name="entityVatNumber" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>ΑΦΜ Επιχείρησης</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="clientsDoc" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Πελάτες</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="DigitalClient" type="dcr:ClientType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="updateclientRequestsDoc" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Αποστολές ενημερώσεων Πελάτη</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="UpdateClientRequest" type="dcr:updateClientType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="clientcorrelationsRequestsDoc" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Αποστολές συσχετίσεων Πελάτη</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="ClientCorrelationsRequest" type="dcr:clientCorrelationType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cancelClientRequestsDoc" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Αποστολές ακυρώσεων πελατών</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="CancelClientRequest" type="dcr:CancelledClientType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+</xs:schema>
