@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>
+	<xs:complexType name="GarageType">
+		<xs:sequence>
+			<xs:element name="vehicleRegistrationNumber" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Αριθμός Κυκλοφορίας Οχήματος</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="foreignVehicleRegistrationNumber" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Αριθμός Κυκλοφορίας Αλλοδαπής</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="vehicleCategory" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Κατηγορία Οχήματος</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="vehicleFactory" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Εργοστάσιο Οχήματος</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

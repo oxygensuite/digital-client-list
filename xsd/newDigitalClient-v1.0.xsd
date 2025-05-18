@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>
+	<xs:include schemaLocation="rental-v1.0.xsd"/>
+	<xs:include schemaLocation="parkingCarWash-v1.0.xsd"/>
+	<xs:include schemaLocation="garage-v1.0.xsd"/>
+	<xs:complexType name="newDigitalClientType">
+		<xs:sequence>
+			<xs:element name="idDcl" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Μοναδικός Αριθμός Ψηφιακού Πελατολογίου. Συμπληρώνεται από την Υπηρεσία</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="clientServiceType" type="ClientServiceType" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Τύπος Πελατολογίου</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="creationDateTime" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Ημερομηνία και ώρα δημιουργίας εγγραφής στο Ψηφιακό Πελατολόγιο</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entityVatNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ΑΦΜ Επιχείρησης</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="branch" type="xs:nonNegativeInteger">
+				<xs:annotation>
+					<xs:documentation>Αρ. Εγκατάστασης</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="recurringService" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Επαναλαμβανόμενη Υπηρεσία</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="continuousService" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Διαρκής Υπηρεσία</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="fromAgreedPeriodDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Από Συμφωνημένη Περίοδο</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="toAgreedPeriodDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Έως Συμφωνημένη Περίοδο</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="mixedService" type="xs:boolean" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Μεικτή Υπηρεσία</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="customerVatNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ΑΦΜ Πελάτη</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="customerCountry" type="CountryType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Χώρα Πελάτη</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="transmissionFailure" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Απώλεια διασύνδεσης</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:byte">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="correlatedDclId" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Συσχετιζόμενα DC ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="comments" type="Comments" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Σχόλια/ Παρατηρήσεις</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="useCase" type="ServiceType" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Περιπτώσεις χρήσης</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="periodicity" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Περιοδικότητα Διαρκούς Υπηρεσίας</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:minInclusive value="1"/>
+						<xs:maxInclusive value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ServiceType">
+		<xs:choice>
+			<xs:element name="rental" type="RentalType"/>
+			<xs:element name="parkingcarwash" type="ParkingCarWashType"/>
+			<xs:element name="garage" type="GarageType"/>
+		</xs:choice>
+	</xs:complexType>
+</xs:schema>

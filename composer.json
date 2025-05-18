@@ -1,0 +1,56 @@
+{
+    "name": "oxygensuite/digital-client-list",
+    "type": "package",
+    "version": "1.0.0",
+    "description": "A PHP package for managing the Digital Client List (DCL) by AADE (IARP) in Greece.",
+    "keywords": [
+        "aade",
+        "dcl",
+        "digital client list",
+        "mydata",
+        "ΑΑΔΕ",
+        "Ψηφιακό Πελατολόγιο"
+    ],
+    "authors": [
+        {
+            "name": "Ilias Sarantoglou",
+            "email": "isarantoglou@oxygen.gr"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-dom": "*",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^v1.24",
+        "laravel/pint": "^1.20",
+        "phpunit/phpunit": "^12.1.5",
+        "roave/security-advisories": "dev-latest",
+        "symfony/var-dumper": "^v7.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "OxygenSuite\\DigitalClient\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
