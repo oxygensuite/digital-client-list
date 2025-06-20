@@ -1,7 +1,6 @@
 {
     "name": "oxygensuite/digital-client-list",
     "type": "package",
-    "version": "1.0.0",
     "description": "A PHP package for managing the Digital Client List (DCL) by AADE (IARP) in Greece.",
     "keywords": [
         "aade",
