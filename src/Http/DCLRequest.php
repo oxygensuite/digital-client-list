@@ -36,14 +36,13 @@ abstract class DCLRequest
      *
      * @param  string  $user_id  The user id provided by AADE
      * @param  string  $subscription_key  The subscription key provided by AADE
-     * @param  string  $env  'dev' or 'prod'
-     * @param  bool  $is_provider  Set to true if the request is for the providers
+     * @param  string  $env  'dev' or 'production'
      * @return void
      */
-    public static function init(string $user_id, string $subscription_key, string $env, bool $is_provider = false): void
+    public static function init(string $user_id, string $subscription_key, string $env): void
     {
         self::setCredentials($user_id, $subscription_key);
-        self::setEnvironment($env, $is_provider);
+        self::setEnvironment($env);
     }
 
     /**
