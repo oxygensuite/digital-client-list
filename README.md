@@ -9,7 +9,7 @@ This PHP package provides a simple and efficient way to interact with the Digita
 ## Documentation
 
 - myDATA webpage: [AADE myDATA](https://www.aade.gr/mydata)
-- DCL documentation (PDF): [AADE DCL REST API v1.0](https://www.aade.gr/sites/default/files/2025-04/DCL_API_Documentation_v1.0_official_erp.pdf)
+- DCL documentation (PDF): [AADE DCL REST API v1.1](https://www.aade.gr/sites/default/files/2025-06/DCL%20API%20Documentation%20v1.1_official_erp.pdf)
 
 ## Requirements
 
@@ -24,7 +24,8 @@ To use this package, you will need first a `aade id` and a `Subscription key`. Y
 
 | Version | PHP | myDATA | Support |
 |---------|-----|--------|---------|
-| ^v1.x   | 8.1 | v1.0.0 | Active  |
+| ^v2.x   | 8.1 | v1.1.0 | Active  |
+| ^v1.x   | 8.1 | v1.0.0 | Ended   |
 
 
 ## Installation
@@ -228,6 +229,12 @@ try {
 | **CancelClient** - Cancel a Digital Client List registration                               | :white_check_mark: |
 | **ClientCorrelations** - Correlate a Digital Client List Registration(s) with Tax Document | :white_check_mark: |
 | **RequestClients** - Retrieve transmitted  registrations                                   | :white_check_mark: |
+
+## Upgrading
+
+When upgrading from v1.x to v2.x, please be aware of breaking changes. The most significant change is in the `ClientServiceType` enum, where `LEASING` has been renamed to `RENTAL`.
+
+For detailed upgrade instructions, please refer to the [UPGRADE.md](UPGRADE.md) file.
 
 ## Special Thanks
 
