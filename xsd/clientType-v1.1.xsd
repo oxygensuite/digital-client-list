@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>
-	<xs:include schemaLocation="newDigitalClient-v1.0.xsd"/>
-	<xs:include schemaLocation="updateClientType-v1.0.xsd"/>
+	<xs:include schemaLocation="SimpleTypes-v1.1.xsd"/>
+	<xs:include schemaLocation="newDigitalClient-v1.1.xsd"/>
+	<xs:include schemaLocation="updateClientType-v1.1.xsd"/>
 	<xs:complexType name="ClientType">
-		<xs:sequence>			
+		<xs:sequence>
 			<xs:element name="InitialClientData" type="newDigitalClientType">
 				<xs:annotation>
 					<xs:documentation>Δεδομένα Δημιουργίας Πελάτη</xs:documentation>

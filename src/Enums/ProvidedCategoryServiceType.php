@@ -40,6 +40,4 @@ enum ProvidedCategoryServiceType: int
      * Ιδιόχρηση (Ενοικίαση, Πάρκινγκ/ Πλυντήρια, Συνεργεία)
      */
     case OWN_USE = 9;
-
-
 }

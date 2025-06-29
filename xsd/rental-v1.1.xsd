@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>
+	<xs:include schemaLocation="SimpleTypes-v1.1.xsd"/>
 	<xs:complexType name="RentalType">
 		<xs:sequence>
 			<xs:element name="vehicleRegistrationNumber" minOccurs="0">

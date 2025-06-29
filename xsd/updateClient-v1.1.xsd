@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcrudt="https://www.aade.gr/myDATA/dcrudt/v1.0" targetNamespace="https://www.aade.gr/myDATA/dcrudt/v1.0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
-	<xs:include schemaLocation="SimpleTypes-v1.0.xsd"/>	
-	<xs:include schemaLocation="updateClientType-v1.0.xsd"/>
+	<xs:include schemaLocation="SimpleTypes-v1.1.xsd"/>
+	<xs:include schemaLocation="updateClientType-v1.1.xsd"/>
 	<xs:element name="UpdateClientDoc">
 		<xs:annotation>
 			<xs:documentation>Ενημέρωση και Ολοκλήρωση Εγγραφών Ψηφιακού Πελατολογίου</xs:documentation>
@@ -11,5 +11,5 @@
 				<xs:element name="updateClient" type="dcrudt:updateClientType"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>	
+	</xs:element>
 </xs:schema>

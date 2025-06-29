@@ -4,7 +4,7 @@ namespace OxygenSuite\DigitalClient\Xml;
 
 class UpdateClientDocWriter extends XMLWriter
 {
-    private const DOC_VERSION = 'v1.0';
+    private const DOC_VERSION = 'v1.1';
 
     private const XMLNS = 'https://www.aade.gr/myDATA/dcrudt/v1.0';
     private const XSI = 'http://www.w3.org/2001/XMLSchema-instance';

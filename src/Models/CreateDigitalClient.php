@@ -28,6 +28,8 @@ class CreateDigitalClient extends Model
         'comments',
         'useCase',
         'periodicity',
+        'continuousLeaseService',
+        'periodicityOther',
     ];
 
     public function getIdDcl(): ?string
@@ -204,6 +206,26 @@ class CreateDigitalClient extends Model
     public function setPeriodicity(int $periodicity): static
     {
         return $this->set('periodicity', $periodicity);
+    }
+
+    public function getContinuousLeaseService(): ?bool
+    {
+        return $this->get('continuousLeaseService');
+    }
+
+    public function setContinuousLeaseService(bool $continuousLeaseService): static
+    {
+        return $this->set('continuousLeaseService', $continuousLeaseService);
+    }
+
+    public function getPeriodicityOther (): ?string
+    {
+        return $this->get('periodicityOther');
+    }
+
+    public function setPeriodicityOther (string $periodicityOther): static
+    {
+        return $this->set('periodicityOther', $periodicityOther);
     }
 
     public function toXml(bool $asNewDigitalClientDoc = false): string

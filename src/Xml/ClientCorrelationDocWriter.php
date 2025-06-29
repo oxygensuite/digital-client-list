@@ -4,7 +4,7 @@ namespace OxygenSuite\DigitalClient\Xml;
 
 class ClientCorrelationDocWriter extends XMLWriter
 {
-    private const DOC_VERSION = 'v1.0';
+    private const DOC_VERSION = 'v1.1';
 
     private const XMLNS = 'http://www.aade.gr/myDATA/dcrudtcor/v1.0';
     private const XSI = 'http://www.w3.org/2001/XMLSchema-instance';

@@ -27,6 +27,8 @@ class CreateDigitalClientFactory extends Factory
             'comments' => fake()->sentence,
             'useCase' => ['garage' => Workshop::factory()->make()],
             'periodicity' => fake()->numberBetween(1, 12),
+            'continuousLeaseService' => fake()->boolean,
+            'periodicityOther' => fake()->sentence,
         ];
     }
 }
