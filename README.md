@@ -183,7 +183,8 @@ use OxygenSuite\DigitalClient\Http\CancelClient;
 // Create a cancel request
 $request = new CancelClient();
 try {
-    $response = $request->handle('your-dcl-id');
+    $responses = $request->handle('your-dcl-id');
+    $response = $responses->first(); //There is only one response
 
     if ($response->isSuccessful()) {
         // Get the cancellation ID
